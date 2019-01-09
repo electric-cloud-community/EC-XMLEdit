@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <key>@PLUGIN_KEY@</key>
+    <version>@PLUGIN_VERSION@</version>
+    <label>@PLUGIN_KEY@</label>
+    <description>XMLEdit Integration</description>
+    <author>Electric Cloud</author>
+    <authorUrl>http://www.electric-cloud.com/support</authorUrl>
+    <category>Utility</category>
+    <commander-version min="3.6"/>
+    <help>EC-XMLEdit_help.xml</help>
+    <components>
+        <component name="XPathQueryParameterPanel">
+            <javascript>war/ecplugins.xmledit.XPathQueryParameterPanel/ecplugins.xmledit.XPathQueryParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="ReadElementParameterPanel">
+            <javascript>war/ecplugins.xmledit.ReadElementParameterPanel/ecplugins.xmledit.ReadElementParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="ReadAttributeParameterPanel">
+            <javascript>war/ecplugins.xmledit.ReadAttributeParameterPanel/ecplugins.xmledit.ReadAttributeParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="InsertElementParameterPanel">
+            <javascript>war/ecplugins.xmledit.InsertElementParameterPanel/ecplugins.xmledit.InsertElementParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="InsertAttributeParameterPanel">
+            <javascript>war/ecplugins.xmledit.InsertAttributeParameterPanel/ecplugins.xmledit.InsertAttributeParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="DeleteElementParameterPanel">
+            <javascript>war/ecplugins.xmledit.DeleteElementParameterPanel/ecplugins.xmledit.DeleteElementParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="DeleteAttributeParameterPanel">
+            <javascript>war/ecplugins.xmledit.DeleteAttributeParameterPanel/ecplugins.xmledit.DeleteAttributeParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="UpdateElementParameterPanel">
+            <javascript>war/ecplugins.xmledit.UpdateElementParameterPanel/ecplugins.xmledit.UpdateElementParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="UpdateAttributeParameterPanel">
+            <javascript>war/ecplugins.xmledit.UpdateAttributeParameterPanel/ecplugins.xmledit.UpdateAttributeParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="ExtractElementParameterPanel">
+            <javascript>war/ecplugins.xmledit.ExtractElementParameterPanel/ecplugins.xmledit.ExtractElementParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="ExtractAttributeParameterPanel">
+            <javascript>war/ecplugins.xmledit.ExtractAttributeParameterPanel/ecplugins.xmledit.ExtractAttributeParameterPanel.nocache.js</javascript>
+        </component>
+    </components>
+    <customTypes>
+        <customType name="XPathQuery">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.XPathQueryParameterPanel/ecplugins.xmledit.XPathQueryParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#XPathQuery
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="ReadElement">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.ReadElementParameterPanel/ecplugins.xmledit.ReadElementParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#ReadElement
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="ReadAttribute">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.ReadAttributeParameterPanel/ecplugins.xmledit.ReadAttributeParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#ReadAttribute
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="InsertElement">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.InsertElementParameterPanel/ecplugins.xmledit.InsertElementParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#InsertElement
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="InsertAttribute">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.InsertAttributeParameterPanel/ecplugins.xmledit.InsertAttributeParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#InsertAttribute
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="DeleteElement">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.DeleteElementParameterPanel/ecplugins.xmledit.DeleteElementParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#DeleteElement
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="DeleteAttribute">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.DeleteAttributeParameterPanel/ecplugins.xmledit.DeleteAttributeParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#DeleteAttribute
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="UpdateElement">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.UpdateElementParameterPanel/ecplugins.xmledit.UpdateElementParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#UpdateElement
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="UpdateAttribute">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.UpdateAttributeParameterPanel/ecplugins.xmledit.UpdateAttributeParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#UpdateAttribute
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="ExtractElement">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.ExtractElementParameterPanel/ecplugins.xmledit.ExtractElementParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#ExtractElement
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="ExtractAttribute">
+            <parameterPanel>
+                <javascript>war/ecplugins.xmledit.ExtractAttributeParameterPanel/ecplugins.xmledit.ExtractAttributeParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-XMLEdit_help?s=Administration&amp;ss=Plugins#ExtractAttribute
+                </help>
+            </parameterPanel>
+        </customType>
+    </customTypes>
+</plugin>

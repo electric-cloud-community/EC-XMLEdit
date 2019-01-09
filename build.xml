@@ -1,0 +1,11 @@
+<project name="EC-XMLEdit" default="package" basedir=".">
+    <description>
+        Build the EC-XMLEdit plugin
+    </description>
+    <property name="buildconfigdir" value="../Plugin-In-A-Box/scripts" />
+    <!-- plugin specific properties -->
+    <property name="pluginKey" value="EC-XMLEdit" />
+    <property name="pluginVersion" value="1.0" />
+    <property name="gwtModules" value="ecplugins.xmledit.XPathQueryParameterPanel,ecplugins.xmledit.ReadElementParameterPanel,ecplugins.xmledit.InsertElementParameterPanel,ecplugins.xmledit.DeleteElementParameterPanel,ecplugins.xmledit.UpdateElementParameterPanel,ecplugins.xmledit.ExtractElementParameterPanel,ecplugins.xmledit.ReadAttributeParameterPanel,ecplugins.xmledit.InsertAttributeParameterPanel,ecplugins.xmledit.DeleteAttributeParameterPanel,ecplugins.xmledit.UpdateAttributeParameterPanel,ecplugins.xmledit.ExtractAttributeParameterPanel"/>
+    <import file="${buildconfigdir}/buildTargets.xml"/>
+</project>

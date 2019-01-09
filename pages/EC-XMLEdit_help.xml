@@ -1,0 +1,1022 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Windows (vers 25 March 2009), see www.w3.org" />
+  <meta content="text/html; charset=us-ascii" http-equiv=
+  "content-type" />
+
+  <title>ElectricFlow Plugin for XML Edit</title>
+  <link rel="stylesheet" href=
+  "../../plugins/@PLUGIN_KEY@/pluginhelp.css" type="text/css"
+  media="screen" />
+</head>
+
+<body>
+  <div class="help">
+    <h1>XML Edit</h1>
+
+    <p>Plugin Version @PLUGIN_VERSION@</p>
+    <hr style=
+    "margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;"
+    noshade="noshade" />
+    <!-- The tool description should answer these kinds of questions:
+What is the tool itself is used for in the development
+process? Who would use this tool? What is the general use-case or
+problem that this tool solves? Look at the tool's documentation or
+website(s) to get their own descriptions. Look at Wikipedia or other
+outside websites. If there is a Hudson plugin, read their
+documentation for ideas, examples, etc. It's OK to copy word-for-word
+only if appropriate, such as FOSS - but not commercial software.
+-->
+
+    <p>A XML editor is program that allows you to open, view, and
+    edit XML files. Unlike word processors, XML editors do not add
+    formatting to text, instead focusing on editing functions for
+    XML text. XML editors are used by a wide variety of people, for
+    a wide variety of purposes.</p>
+
+    <h2>ElectricFlow Integration for XML Edit</h2>
+    <!-- The integration description should answer the questions:
+How deep does our integration go? Why should I care? What general
+functionality does the plugin include? What functionality does
+the plugin omit?
+-->
+
+    <p>The plugin uses PERL and XML::LibXML module to perform the
+    following tasks:</p>
+
+    <ul>
+      <li>Execute an XPath Query</li>
+
+      <li>Read an XML Element</li>
+
+      <li>Insert an XML Element</li>
+
+      <li>Delete an XML Element</li>
+
+      <li>Update an XML Element</li>
+
+      <li>Extract an XML Element</li>
+
+      <li>Read an XML Attribute</li>
+
+      <li>Insert an XML Attribute</li>
+
+      <li>Delete an XML Attribute</li>
+
+      <li>Update an XML Attribute</li>
+
+      <li>Extract an XML Attribute</li>
+    </ul>
+
+    <h2>Integrated Version</h2>
+
+    <p>ElectricFlow minimum version 3.6</p>
+
+    <h1>Plugin Procedures</h1>
+
+    <p>IMPORTANT: For all parameter descriptions below, required
+    parameters are shown in <span class='required'>bold
+    italics</span>.</p>
+
+    <div id="QueryXPath"><a name='QueryXPath' id="QueryXPath"></a>
+
+    <h3>Query XPath</h3>
+
+    <p>This procedure allows users to execute an xpath query on a
+    given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source of the XML to use. List of Options:
+          Filepath, Property, Code. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td>Xpath Query</td>
+
+          <td>XPath query to execute. (Required)</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/XPathQuery.png" /></div>
+
+    <div id="ReadElement"><a name="ReadElement" id=
+    "ReadElement"></a>
+
+    <h3>Read Element</h3>
+
+    <p>This procedure allows users to read the value of an xml
+    element from a given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Return Type</td>
+
+          <td>Return the entire element tag or just its value.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Element Selection</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+
+        <tr>
+          <td>Result Element(output property path)</td>
+
+          <td>Path to property to hold the XML elements read.</td>
+        </tr>
+
+        <tr>
+          <td>Result Elements(output property sheet path)</td>
+
+          <td>Path to property to hold the XML elements read.</td>
+        </tr>
+      </tbody>
+    </table><img alt="Form" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/ReadElement.png" /></div>
+
+    <div id="InsertElement"><a name="InsertElement" id=
+    "InsertElement"></a>
+
+    <h3>Insert Element</h3>
+
+    <p>This procedure allows users to insert an xml element on a
+    given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the parent element.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">New Element</td>
+
+          <td>Tag for the new element to insert. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Element value</td>
+
+          <td>Value for the new element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Insert to</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/InsertElement.png" /></div>
+
+    <div id="DeleteElement"><a name="DeleteElement" id=
+    "DeleteElement"></a>
+
+    <h3>DeleteElement</h3>
+
+    <p>This procedure allows users to delete an xml element from a
+    given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Delete</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/DeleteElement.png" /></div>
+
+    <div id="UpdateElement"><a name="UpdateElement" id=
+    "UpdateElement"></a>
+
+    <h3>Update Element</h3>
+
+    <p>This procedure allows users to update an xml element from a
+    given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Element value</td>
+
+          <td>New value for the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Update</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/UpdateElement.png" /></div>
+
+    <div id="ExtractElement"><a name="ExtractElement" id=
+    "ExtractElement"></a>
+
+    <h3>Extract Element</h3>
+
+    <p>This procedure allows users to extract an xml element from a
+    given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Return Type</td>
+
+          <td>Return the entire element tag or just its value.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Element Selection</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+
+        <tr>
+          <td>Result Element(output property path)</td>
+
+          <td>Path to property to hold the XML element
+          extracted.</td>
+        </tr>
+
+        <tr>
+          <td>Result Elements(output property sheet path)</td>
+
+          <td>Path to property sheet to hold the XML elements
+          extracted.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/ExtractElement.png" /></div>
+
+    <div id="ReadAttribute"><a name="ReadAttribute" id=
+    "ReadAttribute"></a>
+
+    <h3>Read Attribute</h3>
+
+    <p>This procedure allows users to read the value of an xml
+    attribute from a given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Attribute</td>
+
+          <td>Name of the attribute to read. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Return Type</td>
+
+          <td>Return the entire attribute structure(name=value) or
+          just its value. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Element Selection</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+
+        <tr>
+          <td>Result Attribute(output property path)</td>
+
+          <td>Path to property to hold the XML attribute read.</td>
+        </tr>
+
+        <tr>
+          <td>Result Attributes(output property sheet path)</td>
+
+          <td>Path to property sheet to hold the XML attributes
+          read.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/ReadAttribute.png" /></div>
+
+    <div id="InsertAttribute"><a name="InsertAttribute" id=
+    "InsertAttribute"></a>
+
+    <h3>Insert Attribute</h3>
+
+    <p>This procedure allows users to insert an xml attribute in an
+    element on a given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Attribute name</td>
+
+          <td>Name for the new attribute. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Attribute value</td>
+
+          <td>Value for the new attribute.</td>
+        </tr>
+
+        <tr>
+          <td>Insert to</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/InsertAttribute.png" /></div>
+
+    <div id="DeleteAttribute"><a name="DeleteAttribute" id=
+    "DeleteAttribute"></a>
+
+    <h3>Delete Attribute</h3>
+
+    <p>This procedure allows users to delete an xml attribute from
+    an element in a given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the parent element.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Attribute Name</td>
+
+          <td>Name of the attribute to delete. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Delete from</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/DeleteAttribute.png" /></div>
+
+    <div id="UpdateAttribute"><a name="UpdateAttribute" id=
+    "UpdateAttribute"></a>
+
+    <h3>Update Attribute</h3>
+
+    <p>This procedure allows users to update an xml attribute value
+    from an element in a given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Attribute Name</td>
+
+          <td>Name of the attribute to update. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Attribute Value</td>
+
+          <td>New value for the attribute.</td>
+        </tr>
+
+        <tr>
+          <td>Update</td>
+
+          <td>Select the action to do if the query returns several
+          elements.</td>
+        </tr>
+
+        <tr>
+          <td>Result XML(output property path)</td>
+
+          <td>Path to property to hold the XML.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/UpdateAttribute.png" /></div>
+
+    <div id="ExtractAttribute"><a name="ExtractAttribute" id=
+    "ExtractAttribute"></a>
+
+    <h3>Extract Attribute</h3>
+
+    <p>This procedure allows users to extract an xml attribute from
+    an element in a given xml text.</p>
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="required">Source</td>
+
+          <td>Select the source for the xml to parse.
+          (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Filepath</td>
+
+          <td>Path to the XML file to parse. (Required If Source
+          selected is Filepath)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Property path</td>
+
+          <td>Path to the property where the xml is located.
+          (Required If Source selected is Property)</td>
+        </tr>
+
+        <tr>
+          <td class="required">XML Code</td>
+
+          <td>XML code to parse. (Required If Source selected is
+          Code)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Xpath Query</td>
+
+          <td>XPath query to get the element. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Attribute</td>
+
+          <td>Name of the attribute to extract. (Required)</td>
+        </tr>
+
+        <tr>
+          <td class="required">Return Type</td>
+
+          <td>Return the entire attribute structure(name=value) or
+          just its value. (Required)</td>
+        </tr>
+
+        <tr>
+          <td>Attribute Selection</td>
+
+          <td>Select the action to do if the query returns several
+          attributes.</td>
+        </tr>
+
+        <tr>
+          <td>Result Attribute(output property path)</td>
+
+          <td>Path to property to hold the XML attribute
+          extracted.</td>
+        </tr>
+
+        <tr>
+          <td>Result Attributes(output property sheet path)</td>
+
+          <td>Path to property sheet to hold the XML attributes
+          extracted.</td>
+        </tr>
+
+        <tr>
+          <td>Result XML(output property path):</td>
+
+          <td>Path to property to hold the XML.</td>
+        </tr>
+      </tbody>
+    </table><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/parameters/ExtractAttribute.png" /></div>
+
+    <h1>Use Cases and Examples</h1>
+    <!-- This section is for examples and use cases, including screenshots of the new Parameter Panel with example values filled in.
+Unfortunately, I can't tell you what exactly to put here, but it's OK to put what seems like too much! Include both parameter
+values and output where appropriate. Use a separate 'h2' header for each example. Under the h2 header try to stay with the style
+outline used above where possible.
+-->
+
+    <p>For all the examples below, we are going to use the
+    following xml:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/xml.png" />
+
+    <h2>Example 1: Insert new element</h2>
+
+    <h4>InsertElement</h4>
+
+    <p>Create a new InsertElement procedure, fill in the requested
+    parameters with real values, in this example we are going to
+    insert a new book element in a bookstore:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/insert_params.png" />
+
+    <p>Once the job finished, you can see the results.<br />
+    <img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/insert_job.png" /></p>
+
+    <p>Procedure output:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/insert_log.png" />
+
+    <h2>Example 2: Delete attributes</h2>
+
+    <h4>DeleteAttribute</h4>
+
+    <p>Create a new DeleteAttribute procedure, fill in the
+    requested parameters with real values, in this example we are
+    going to delete all category attributes from books in a
+    bookstore:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/delete_params.png" />
+
+    <p>Once the job finished, you can see the results.<br />
+    <img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/delete_job.png" /></p>
+
+    <p>Procedure output:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/delete_log.png" />
+
+    <h2>Example 3: Extract elements</h2>
+
+    <h4>ExtractElement</h4>
+
+    <p>Create a new ExtractElement procedure, fill in the requested
+    parameters with real values, in this example we are going to
+    extract all the price elements from books in a
+    bookstore:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/extract_params.png" />
+
+    <p>Once the job finished, you can see the results.<br />
+    <img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/extract_job.png" /></p>
+
+    <p>Procedure output:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/extract_log.png" />
+
+    <p>Saved results:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/extract_results.png" />
+
+    <h2>Example 4: Read elements</h2>
+
+    <h4>ReadElement</h4>
+
+    <p>Create a new ReadElement procedure, fill in the requested
+    parameters with real values, in this example we are going to
+    read the title of the first book wich price is higher than
+    35:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/read_params.png" />
+
+    <p>Once the job finished, you can see the results.<br />
+    <img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/read_job.png" /></p>
+
+    <p>Procedure output:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/read_log.png" />
+
+    <p>Saved results:</p><img alt="" src=
+    "../../plugins/@PLUGIN_KEY@/images/examples/read_results.png" />
+
+    <h1>Release Notes</h1>
+
+    <h2>EC-XMLEdit-1.0.1</h2>
+
+    <ul>
+      <li>Remove shared plugins directory dependence.</li>
+    </ul>
+    
+    <h2>EC-XMLEdit-1.0.0</h2>
+
+    <ul>
+      <li>Procedures: DeleteAttribute, DeleteElement,
+      ExtractAttribute, ExtractElement, InsertAttribute,
+      InsertElement, ReadAttribute, ReadElement, UpdateAttribute,
+      UpdateElement and XPathQuery.</li>
+
+      <li>Implemented GWT parameter panels.</li>
+
+      <li>Created Help Page.</li>
+
+      <li>Added postp matchers.</li>
+    </ul>
+  </div>
+</body>
+</html>
